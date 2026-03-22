@@ -41,9 +41,10 @@ Detect which mode the user needs from context cues:
 
 **Workflow**:
 1. Determine the universe — Nifty 50, Nifty 200, a specific sector, or user-specified list
-2. Use web search to pull recent price action and market context (broad scan)
-3. Screen for setups matching the criteria below — shortlist 4-6 candidates
-4. **Verify CMP for each shortlisted stock** with individual searches before calculating any levels
+   - For Nifty 200 scans: read `references/nifty200-universe.md` for the full constituent list and sector groupings
+2. **Systematic discovery using screeners** — read `references/screener-urls.md` and fetch results from 3-4 Chartink/Trendlyne screeners (breakout, volume, 52W high). Do NOT rely solely on market recap articles for stock discovery.
+3. Cross-reference screener results: stocks appearing in 2+ screeners are priority candidates. Filter against the universe list. Shortlist 4-6 candidates.
+4. **Verify CMP for each shortlisted stock** with individual searches before calculating any levels. Also search for delivery %, bulk/block deals, and ASM/GSM status per stock.
 5. Output a **watchlist** with ticker, setup type, key levels (support/resistance/breakout level), and a one-line rationale
 
 **Output format**: A clean markdown table or spreadsheet (if the user wants a file). Columns:
@@ -451,3 +452,5 @@ The `references/` directory contains detailed implementation guides:
 - **`references/kite-mcp.md`** — Kite MCP integration details: available tools, how to use them in each skill mode, order execution safety rules, setup instructions for users. Read when Kite MCP tools are detected or user asks about connecting their Zerodha account.
 - **`references/india-mechanics.md`** — Circuit limits, T+1 settlement, ASM/GSM framework, F&O ban periods, operator activity warnings, budget/RBI policy patterns. Read before recommending any stock outside Nifty 50, and always for mid/small caps.
 - **`references/alpha-and-edge.md`** — Unusual volume detection, bulk/block deal tracking, sector-stock divergence, historical pattern context, India VIX framework, gap risk/slippage management, portfolio heat rule. Read for every trade plan to add genuine analytical edge.
+- **`references/nifty200-universe.md`** — Complete Nifty 200 constituent list grouped by sector, with quick sector filters for thematic scanning. Read at the start of any Nifty 200 scan to know the universe. Updated semi-annually (March & September).
+- **`references/screener-urls.md`** — Chartink, Trendlyne, and NSE screener URLs for systematic stock discovery, plus the step-by-step scanning workflow. **Read before every Quick Screen scan** — this is the discovery pipeline that replaces relying on market commentary.
